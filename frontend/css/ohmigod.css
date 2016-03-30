@@ -1,0 +1,76 @@
+h1 {
+  font-size: 60px;
+  line-height: 60px;
+  margin: 25px;
+}
+a {
+  color: black;
+}
+p {
+  margin: 0px 5px;
+}
+body {
+  background-color: yellow;
+  font-family: 'Oleo Script', cursive;
+  margin: 0px;
+  text-align: center;
+}
+.clearfix {
+  clear: both;
+}
+.resistor-container {
+  margin-bottom: 15px;
+  position: relative;
+}
+.resistor-container:before {
+  content: "Click bands to change color";
+  font-family: monospace, helvetica, sans-serif;
+  line-height: 40px;
+  position: relative;
+}
+.resistor-container:after {
+  border-top: 20px solid lightgray;
+  content: "";
+  left: 0px;
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  z-index: -1;
+}
+.resistor-body {
+  background-color: mediumturquoise;
+  border-radius: 45px;
+  height: 120px;
+  margin: 0 auto;
+  padding-left: 35px;
+  width: 350px;
+}
+.resistor-body div {
+  cursor: pointer;
+  float: left;
+  height: 118px;
+  margin-left: 15px;
+  position: relative;
+  width: 45px;
+}
+.value {
+  background-color: white;
+  border: 1px solid black;
+  font-size: 30px;
+  margin: 0 auto;
+  width: 315px;
+}
+.colors {
+  cursor: pointer;
+  margin: 0 auto;
+  width: 310px;
+}
+.color-box {
+  float: left;
+  height: 40px;
+  margin: 10px;
+  width: 40px;
+}
+.stripe-4 {
+  margin-left: 70px !important;
+}

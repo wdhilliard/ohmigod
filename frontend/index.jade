@@ -1,0 +1,35 @@
+doctype html
+
+html(lang="en",ng-app="ohmApp")
+  head
+    title='OHMigod by Will Hilliard'
+    link(href='https://fonts.googleapis.com/css?family=Oleo+Script&subset=latin,latin-ext', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/css/ohmigod.css')
+
+    script(src='/js/vendor/angular.min.js')
+    script(src='/js/ohmigod.js')
+
+  body(ng-controller='ohmCtrl')
+    h1 	&Omega;HMigod!
+
+    div(style='position:relative;')
+      .resistor-container(style='width:100%;')
+        .resistor-body
+          .stripe-1(ng-click="setActive(1)", ng-model='stripe_1', ng-style='{"background-color": stripe_1.hex,"border": "1px "+getBorder(stripe_1)+" black" }')
+          .stripe-2(ng-click="setActive(2)", ng-model='stripe_2', ng-style='{"background-color": stripe_2.hex,"border": "1px "+getBorder(stripe_2)+" black" }')
+          .stripe-3(ng-click="setActive(3)", ng-model='stripe_3', ng-style='{"background-color": stripe_3.hex,"border": "1px "+getBorder(stripe_3)+" black" }')
+          .stripe-4(ng-click="setActive(4)", ng-model='stripe_4', ng-style='{"background-color": stripe_4.hex,"border": "1px "+getBorder(stripe_4)+" black" }')
+      
+      .value
+        p.
+          {{resistance}}&Omega; {{tolerance}}
+
+      .colors
+        .color-box( ng-repeat='color in colors', ng-style='{"background-color": color.hex,"border": "1px "+getBorder(color)+" black" ,"display": colorDisplay(color)}', ng-click='setColor(color)')
+        .clearfix
+
+      br.
+      p
+        a(href='http://github.com/wdhilliard') View on Github
+      p
+        a(href='/tests.html') Run Unit Tests
