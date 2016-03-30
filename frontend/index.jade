@@ -10,7 +10,10 @@ html(lang="en",ng-app="ohmApp")
     script(src='/js/ohmigod.js')
 
   body(ng-controller='ohmCtrl')
-    h1 	&Omega;HMigod!
+    h1 
+      span(style='font-family:sans-serif;')
+        &#937;
+      | hmigod!
 
     div(style='position:relative;')
       .resistor-container(style='width:100%;')
@@ -21,8 +24,11 @@ html(lang="en",ng-app="ohmApp")
           .stripe-4(ng-click="setActive(4)", ng-model='stripe_4', ng-style='{"background-color": stripe_4.hex,"border": "1px "+getBorder(stripe_4)+" black" }')
       
       .value
-        p.
-          {{resistance}}&Omega; {{tolerance}}
+        p
+          | {{resistance}}
+          span(style='font-family:sans-serif;')
+            &#937;
+          | {{tolerance}}
 
       .colors
         .color-box( ng-repeat='color in colors', ng-style='{"background-color": color.hex,"border": "1px "+getBorder(color)+" black" ,"display": colorDisplay(color)}', ng-click='setColor(color)')
